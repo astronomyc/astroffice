@@ -1,0 +1,24 @@
+<Configuration>
+
+  <Add OfficeClientEdition="64" Channel="PerpetualVL2021">
+    <Product ID="ProPlus2021Volume">
+      <Language ID="es-es" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="Teams" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="Outlook" />
+      <ExcludeApp ID="Skype for business" />
+      <ExcludeApp ID="OneDrive for business" />
+      <ExcludeApp ID="OneDrive" />
+    </Product>
+  </Add>
+
+  <Remove All="True" />
+
+  <!--  <RemoveMSI All="True" /> -->
+
+  <!--  <Display Level="None" AcceptEULA="TRUE" />  -->
+
+  <!--  <Property Name="AUTOACTIVATE" Value="1" />  -->
+
+</Configuration>
