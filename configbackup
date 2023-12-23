@@ -2,7 +2,10 @@
 
   <Add OfficeClientEdition="64" Channel="PerpetualVL2021">
     <Product ID="ProPlus2021Volume">
-      <Language ID="es-es" />
+      <Language ID="en-US" />
+      <ExcludeApp ID="Word" />
+      <ExcludeApp ID="Excel" />
+      <ExcludeApp ID="PowerPoint" />
       <ExcludeApp ID="Access" />
       <ExcludeApp ID="Publisher" />
       <ExcludeApp ID="OneNote" />
@@ -12,16 +15,9 @@
       <ExcludeApp ID="Groove" />
       <ExcludeApp ID="Lync" />
       <ExcludeApp ID="Bing" />
-
     </Product>
   </Add>
 
   <Remove All="True" />
-
-  <!--  <RemoveMSI All="True" /> -->
-
-  <!--  <Display Level="None" AcceptEULA="TRUE" />  -->
-
-  <!--  <Property Name="AUTOACTIVATE" Value="1" />  -->
 
 </Configuration>
