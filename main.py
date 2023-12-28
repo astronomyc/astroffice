@@ -3,6 +3,8 @@ from tkinter import ttk
 import xml.etree.ElementTree as ET
 import shutil
 import os
+import subprocess
+import sys
 
 # Definiciones
 def restoreFromBackup():
@@ -102,6 +104,12 @@ def installFn():
     changeConfig('config.xml', varProduct, varArch, varLang, cbWord.get(), cbExcel.get(), cbPowerpoint.get(), cbAccess.get(), cbPublisher.get(), cbOnenote.get(), cbOutlook.get(), cbDrive.get())
     run_cmd("setup /configure config.xml")
     defaultSettings()
+
+def uninstallFn():
+    run_cmd("setup /configure configuninstall.xml")
+
+def activateFn():
+        subprocess.Popen(["powershell", "Start-Process powershell -Verb RunAs -ArgumentList 'irm https://massgrave.dev/get |iex'"], creationflags=subprocess.CREATE_NEW_CONSOLE)
 
 # Ventana
 root = tk.Tk()
@@ -219,6 +227,14 @@ installBtn.pack()
 varProduct = product[0]
 varArch = arch[0]
 varLang = lang[0]
+
+###Boton de Desinstalar
+uninstallBtn = ttk.Button(frameUninstall, text="Uninstall", command=uninstallFn)
+uninstallBtn.pack()
+
+###Boton de Activar
+activateBtn = ttk.Button(frameActivate, text="Activate", command=activateFn)
+activateBtn.pack()
 
 defaultSettings()
 root.mainloop()
