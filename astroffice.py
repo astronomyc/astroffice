@@ -8,7 +8,7 @@ import sys
 
 # Definiciones
 def restoreFromBackup():
-    shutil.copyfile('configbackup', 'config.xml')
+    shutil.copyfile('_internal/assets/configbackup', '_internal/assets/config.xml')
 
 def defaultSettings():
     
@@ -101,12 +101,12 @@ def langFn(event):
     varLang = boxLang.get()
 
 def installFn():
-    changeConfig('config.xml', varProduct, varArch, varLang, cbWord.get(), cbExcel.get(), cbPowerpoint.get(), cbAccess.get(), cbPublisher.get(), cbOnenote.get(), cbOutlook.get(), cbDrive.get())
-    run_cmd("setup /configure config.xml")
+    changeConfig('_internal/assets/config.xml', varProduct, varArch, varLang, cbWord.get(), cbExcel.get(), cbPowerpoint.get(), cbAccess.get(), cbPublisher.get(), cbOnenote.get(), cbOutlook.get(), cbDrive.get())
+    run_cmd("_internal/assets/setup /configure _internal/assets/config.xml")
     defaultSettings()
 
 def uninstallFn():
-    run_cmd("setup /configure configuninstall.xml")
+    run_cmd("_internal/assets/setup /configure _internal/assets/configuninstall.xml")
 
 def activateFn():
         subprocess.Popen(["powershell", "Start-Process powershell -Verb RunAs -ArgumentList 'irm https://massgrave.dev/get |iex'"], creationflags=subprocess.CREATE_NEW_CONSOLE)
@@ -114,7 +114,7 @@ def activateFn():
 # Ventana
 root = tk.Tk()
 root.title("Astroffice")
-root.iconbitmap('icon.ico')
+root.iconbitmap('_internal/assets/icon.ico')
 root.geometry("800x600")
 root.resizable(width=False, height=False)
 root.config(bg='#333')
